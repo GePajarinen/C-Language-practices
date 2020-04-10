@@ -23,7 +23,7 @@ A company did a market research to find out if the consumers liked their latest 
 * The percentage of women who answered yes;
 * The percentage of male who answered no;
 
-The code for this quest can be seen and tested [HERE: REPL.IT](https://repl.it/@Gesiane/Company-research)   
+The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Company-research)   
 ![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/company_research.png?raw=true)
 
 ### Quest 2
@@ -36,5 +36,16 @@ For each of the electricity consumers in a city, the account number and the tota
 * Show the number of consumers that exceeded 170 KW;
 Store information in vector and/or matrix structures. On the screen should be a MENU for the user to register a new account or to view the above informations
 
-The code for this quest can be seen and tested [HERE: REPL.IT](https://repl.it/@Gesiane/Electric-company)   
-![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/electric_company.png?raw=true)
+The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Electric-company)   
+![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/electric_company.png?raw=true)   
+
+### Quest 3
+## Magic square
+
+> _"A magic square is a square grid (where n is the number of cells on each side) filled with distinct positive integers in the range, 
+>such that each cell contains a different integer and the sum of the integers in each row, column and diagonal is equal." (wikipedia)_   
+* Given a matrix with the dimension DxD, check if the square is magic or not using an algorithm.
+
+The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Magic-Squarte)   
+[Code running](https://github.com/GePajarinen/university_practices/blob/master/images/magic_squareFalse.png?raw=true)  
+![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/magic_squareTrue.png?raw=true)
