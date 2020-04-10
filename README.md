@@ -24,7 +24,7 @@ A company did a market research to find out if the consumers liked their latest 
 * The percentage of male who answered no;
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Company-research)   
-![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/company_research.png?raw=true)
+![Code running](IMAGE HERE)
 
 ### Quest 2
 ## Electric company
