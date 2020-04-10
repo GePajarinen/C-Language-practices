@@ -14,6 +14,7 @@ Exercicies to practice C language
 
 The quest details are commented on the top of each file.
 
+***
 ### Quest 1
 ## Company research:
 
@@ -26,6 +27,7 @@ A company did a market research to find out if the consumers liked their latest 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Company-research)   
 ![Code running](IMAGE HERE)
 
+***
 ### Quest 2
 ## Electric company
 
@@ -39,6 +41,7 @@ Store information in vector and/or matrix structures. On the screen should be a 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Electric-company)   
 ![Code running](IMAGE HERE)   
 
+***
 ### Quest 3
 ## Magic square
 
@@ -50,6 +53,7 @@ The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://
 ![Code running](IMAGE HERE)  
 ![Code running](IMAGE HERE)
 
+***
 ### Quest 4
 ## Magic square  
 
