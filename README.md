@@ -37,7 +37,7 @@ For each of the electricity consumers in a city, the account number and the tota
 Store information in vector and/or matrix structures. On the screen should be a MENU for the user to register a new account or to view the above informations
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Electric-company)   
-![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/electric_company.png?raw=true)   
+![Code running](IMAGE HERE)   
 
 ### Quest 3
 ## Magic square
@@ -47,5 +47,16 @@ The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://
 * Given a matrix with the dimension DxD, check if the square is magic or not using an algorithm.
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Magic-Squarte)   
-[Code running](https://github.com/GePajarinen/university_practices/blob/master/images/magic_squareFalse.png?raw=true)  
-![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/magic_squareTrue.png?raw=true)
+![Code running](IMAGE HERE)  
+![Code running](IMAGE HERE)
+
+### Quest 4
+## Magic square  
+
+Write a function that takes two strings as parameters, as well as an integer value that represents a position. 
+The function must insert the second string at the indicated position of the first one and it should display the user's result.
+
+The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Mixing-strings)   
+![Code running](IMAGE HERE) 
+
+
