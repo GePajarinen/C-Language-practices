@@ -25,6 +25,7 @@ A company did a market research to find out if the consumers liked their latest 
 * The percentage of male who answered no;
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Company-research)   
+
 ![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/company-research.png?raw=true)
 
 ***
@@ -39,6 +40,7 @@ For each of the electricity consumers in a city, the account number and the tota
 Store information in vector and/or matrix structures. On the screen should be a MENU for the user to register a new account or to view the above informations
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Electric-company)   
+
 ![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/electric-company.png?raw=true)   
 
 ***
@@ -50,6 +52,7 @@ The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://
 * Given a matrix with the dimension DxD, check if the square is magic or not using an algorithm.
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Magic-Squarte)   
+
 ![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/magic-squarteFalse.png?raw=true)  
 ![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/magic-squarteTrue.png?raw=true)
 
@@ -61,6 +64,7 @@ Write a function that takes two strings as parameters, as well as an integer val
 The function must insert the second string at the indicated position of the first one and it should display the user's result.
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Mixing-strings)   
+
 ![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/mixing_string.png?raw=true) 
 
 
