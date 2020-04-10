@@ -5,8 +5,8 @@
 >TECNÓLOGO EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS   
 >DISCIPLINA DE LÓGICA DE PROGRAMAÇÃO E ALGORITMOS
   
-  >>GESIANE G. F. PAJARINEN – RU: 2466550   
-  >>PROF. VINICIUS POZZOBON BORIN, Me
+  >GESIANE G. F. PAJARINEN – RU: 2466550   
+  >PROF. VINICIUS POZZOBON BORIN, Me
   ***
 
 
@@ -22,6 +22,6 @@ A company did a market research to find out if the consumers liked their latest 
 * The percentage of women who answered yes;
 * The percentage of male who answered no;
 
-The code for this quest can be seen and tested [HERE: REPL.IT](https://company-research.gesiane.repl.run/)
+The code for this quest can be seen and tested [HERE: REPL.IT](https://company-research.gesiane.repl.run/)   
 ![Code running](COLOCAR IMAGEM)
 
