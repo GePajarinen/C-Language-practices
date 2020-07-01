@@ -10,9 +10,11 @@ O algoritmo também vai ter que comparar os dois RU usando ponteiros e imprimir 
 
 int main() {
 
+  //Declarando as variáveis e seus respectivos ponteiros:
   int RU, valor, *pRU, *pvalor;
 
-  printf("Digite o seu RU: ");
+  //Armazenando na memória o meu RU e o valor 1234567, ambos digitados pelo usuário na tela:
+  printf("Digite o seu RU: ");  
   scanf("%d", &RU);
 
   printf("Digite a sequência '1234567': ");
@@ -23,11 +25,13 @@ int main() {
 
   printf("\n");
 
+  //Imprimindo na tela ambos RU usando ponteiros:
   printf("Seu RU é: %d \n", *pRU);
   printf("A sequência digitada foi: %d \n", *pvalor);
 
   printf("\n");
 
+  //Comparando o RU e a sequência 1234567 usando ponteiros e imprimindo na tela qual é o maior:
   if (*pRU > *pvalor){
     printf("O seu RU é maio que a sequência.\n");
   } 
@@ -35,12 +39,9 @@ int main() {
     printf("A sequência é maio que seu RU. \n");
   }
 
-  printf("\n");
-
-
   return 0;
 
 }
 
-//system("read -p 'Press Enter to continue...' var"); 
 //system("pause"); //Não funciona no me shell
+//system("read -p 'Press Enter to continue...' var"). <- Posso usar esse. 
