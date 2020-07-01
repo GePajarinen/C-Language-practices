@@ -17,6 +17,8 @@ int main(){
 
   //Pedindo as entradas do usuário:
   printf("Digite seu nome e seu RU \n");
+  
+  //Armazenando as entradas:
   scanf("%s %d", &nome[0], &RU);
 
   printf("\n");
