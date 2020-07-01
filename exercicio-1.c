@@ -45,8 +45,9 @@ int main() {
   printf("valor de b = %.2f \n", b);
   printf("valor de c = %s \n", c);
 
-  system("pause"); 
+  
   return 0; 
 }
 
+//system("read -p 'Press Enter to continue...' var"); 
 //http://www.inf.ufpr.br/cursos/ci067/Docs/NotasAula/notas-29_Strings_Ponteiros.html
