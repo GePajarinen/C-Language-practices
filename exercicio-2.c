@@ -43,7 +43,7 @@ int main() {
     printf("O seu RU %d é igual à sequência %d.\n", *pRU, *pvalor);
   }
 
-  system("pause"); 
+  //system("pause"); 
   return 0;
 
 }
