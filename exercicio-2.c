@@ -9,6 +9,7 @@ O algoritmo também vai ter que comparar os dois RU usando ponteiros e imprimir 
 #include <stdlib.h>
 
 int main() {
+  printf("\n\n- - - - - - - - - - - - - - - - - - - - \n\n"); //Para melhorar a aparência na execução do código.
 
   //Declarando as variáveis e seus respectivos ponteiros:
   int RU, valor, *pRU, *pvalor;
@@ -43,6 +44,7 @@ int main() {
     printf("O seu RU %d é igual à sequência %d.\n", *pRU, *pvalor);
   }
 
+  printf("\n\n- - - - - - - - - - - - - - - - - - - - \n\n"); //Para melhorar a aparência na execução do código.
   //system("pause"); 
   return 0;
 
