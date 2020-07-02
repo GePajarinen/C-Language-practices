@@ -26,19 +26,24 @@ int main() {
   printf("\n");
 
   //Imprimindo na tela ambos RU usando ponteiros:
-  printf("Seu RU é: %d \n", *pRU);
-  printf("A sequência digitada foi: %d \n", *pvalor);
+  printf("Imprimindo na tela ambos RU usando ponteiros: \n");
+  printf(">> Seu RU é: %d \n", *pRU);
+  printf(">> A sequência digitada foi: %d \n", *pvalor);
 
   printf("\n");
 
   //Comparando o RU e a sequência 1234567 usando ponteiros e imprimindo na tela qual é o maior:
   if (*pRU > *pvalor){
-    printf("O seu RU é maio que a sequência.\n");
+    printf("O seu RU %d é maio que a sequência %d.\n", *pRU, *pvalor);
   } 
+  else if(*pRU < *pvalor){
+    printf("A sequência %d é maio que seu RU %d. \n", *pvalor, *pRU);
+  }
   else {
-    printf("A sequência é maio que seu RU. \n");
+    printf("O seu RU %d é igual à sequência %d.\n", *pRU, *pvalor);
   }
 
+  system("pause"); 
   return 0;
 
 }
