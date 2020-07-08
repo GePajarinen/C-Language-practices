@@ -35,10 +35,10 @@ int main() {
 
   //Comparando o RU e a sequência 1234567 usando ponteiros e imprimindo na tela qual é o maior:
   if (*pRU > *pvalor){
-    printf("O seu RU %d é maio que a sequência %d.\n", *pRU, *pvalor);
+    printf("O seu RU %d é maior que a sequência %d.\n", *pRU, *pvalor);
   } 
   else if(*pRU < *pvalor){
-    printf("A sequência %d é maio que seu RU %d. \n", *pvalor, *pRU);
+    printf("A sequência %d é maior que seu RU %d. \n", *pvalor, *pRU);
   }
   else {
     printf("O seu RU %d é igual à sequência %d.\n", *pRU, *pvalor);
