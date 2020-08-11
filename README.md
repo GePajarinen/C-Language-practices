@@ -58,7 +58,7 @@ The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://
 
 ***
 ### Quest 4
-## Magic square  
+## Mixing strings  
 
 Write a function that takes two strings as parameters, as well as an integer value that represents a position. 
 The function must insert the second string at the indicated position of the first one and it should display the user's result.
