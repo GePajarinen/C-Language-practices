@@ -26,7 +26,8 @@ A company did a market research to find out if the consumers liked their latest 
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Company-research)   
 
-![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/company-research.png?raw=true)
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/company-research.png?raw=true)
+
 
 ***
 ### Quest 2
@@ -41,7 +42,7 @@ Store information in vector and/or matrix structures. On the screen should be a 
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Electric-company)   
 
-![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/electric-company.png?raw=true)   
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/electric-company.png?raw=true)   
 
 ***
 ### Quest 3
@@ -53,8 +54,8 @@ The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Magic-Squarte)   
 
-![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/magic-squarteFalse.png?raw=true)  
-![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/magic-squarteTrue.png?raw=true)
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/magic-squarteFalse.png?raw=true)  
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/magic-squarteTrue.png?raw=true)
 
 ***
 ### Quest 4
@@ -65,6 +66,6 @@ The function must insert the second string at the indicated position of the firs
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/Mixing-strings)   
 
-![Code running](https://github.com/GePajarinen/university_practices/blob/master/images/mixing_string.png?raw=true) 
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/mixing_string.png?raw=true) 
 
 
