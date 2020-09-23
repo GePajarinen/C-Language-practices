@@ -23,9 +23,7 @@ Escreva um algoritmo em linguagem C com as seguintes instruções:
 2. Declare três ponteiros;
 3. Associe as variáveis aos ponteiros;
 4. Modifique os valores de cada variável indiretamente  usando os ponteiros associados. 
-   Para armazenar os valores nas variáveis, armazene na variável char a primeira letra do seu nome, 
-   na variável inteira os dois últimos dígitos do seu RU e na variável real os 4 últimos dígitos do seu RU, 
-   sendo os 2 últimos os valores com virgula;
+   Para armazenar os valores nas variáveis, armazene na variável char a primeira letra do seu nome, na variável inteira os dois últimos dígitos do seu RU e na variável real os 4 últimos dígitos do seu RU, sendo os 2 últimos os valores com virgula;
 5. Imprima na tela os valores das variáveis antes e após a modificação.
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/exer-1#main.c)   
@@ -72,10 +70,10 @@ The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://
 ***
 ## EXERCÍCIO 5    
 
-EXERCÍCIO 05
 Faça um algoritmo em linguagem C que contenha dois números inteiros digitados na tela pelo usuário:
 a. O primeiro número marca um início;
 b. O segundo número marca um fim;
+
 O algoritmo vai contar quantos números existem entre o início (primeira entrada) e o fim (segunda entrada). 
 A impressão na tela do usuário deve ser realizada de duas formas:
 a. Iterativa;
