@@ -1,5 +1,5 @@
 /*
-AULA 05
+EXERCÍCIO 05
 Faça um algoritmo em linguagem C que contenha dois números inteiros digitados na tela pelo usuário:
 a. O primeiro número marca um início;
 b. O segundo número marca um fim;
