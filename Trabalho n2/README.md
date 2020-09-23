@@ -30,7 +30,7 @@ Escreva um algoritmo em linguagem C com as seguintes instruções:
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/exer-1#main.c)   
 
-![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/company-research.png?raw=true)
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n2/images/EXER1.png?raw=true)
 
 
 ***
@@ -43,7 +43,7 @@ O algoritmo também vai ter que comparar os dois RU usando ponteiros e imprimir 
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/exer-2#main.c)   
 
-![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/electric-company.png?raw=true)   
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n2/images/EXER2.png?raw=true)   
 
 ***
 ## EXERCÍCIO 3   
@@ -56,8 +56,7 @@ Faça um algoritmo em linguagem C com as seguintes funcionalidades:
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/exer-3#main.c)   
 
-![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/magic-squarteFalse.png?raw=true)  
-![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/magic-squarteTrue.png?raw=true)
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n2/images/EXER3.png?raw=true)  
 
 ***
 ## EXERCÍCIO 4   
@@ -68,7 +67,7 @@ Imprima na tela também o seu RU na tela.
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/exer-4#main.c)   
 
-![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/mixing_string.png?raw=true) 
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n2/images/EXER4.png?raw=true)   
 
 ***
 ## EXERCÍCIO 5    
@@ -87,6 +86,6 @@ Ao colocar no seu relatório uma imagem do seu código funcionando, coloque ele
 
 The code for this quest can be seen and tested [HERE: REPL.IT @Gesiane](https://repl.it/@Gesiane/exer-5)   
 
-![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n1/images/mixing_string.png?raw=true)
+![Code running](https://github.com/GePajarinen/C-Language-practices/blob/master/Trabalho%20n2/images/EXER5.png?raw=true)
 
 
