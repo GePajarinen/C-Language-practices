@@ -16,31 +16,32 @@ int menu();
 void InserirInicio();
 void Listar();
 
-struct ElementoDaLista_Simples{
+struct Lista_de_Musicas{
   char titulo[30], artista[30]; //vetor que vai armazenar o titulo da musica.
   float duracao;
-  struct ElementoDaLista_Simples *proximo;
+  struct Lista_de_Musicas *proximo;
 } *Head; //Global
 
 
 int main() {
-  int c, opcao, num, posicao, remocao;
+  int c, opcao;
   while (1){
     opcao= menu();
+
     switch(opcao){
-      case 1: //Inserir no início da lsita
+      case 1: //Inserir no início da lista
         InserirInicio();
         break;
       
-      case 5: //Mostrar a lita
+      case 2: //Mostrar a lista
         Listar();
         break;
       
-      case 6: //Sair do programa
+      case 3: //Sair do programa
         return 0;
       
-      default:
-			  printf("Invalido\n\n");
+      default: //Para opção inválida
+			  printf("\nOpção inválida. Tente novamente.\n\n");
 
     }
   }
@@ -51,12 +52,14 @@ int menu(){
   int escolha, c;
   //system("Cls"); //sh: 1: Cls: not found
 
-  printf("1. Inserir no início da lista encadeada simples.\n");
-  printf("5. Mostrar a lista encadeada simples.\n");
-  printf("6. Sair do progrma.\n");
+  printf("----------------------------------\n");
+  printf("1. Inserir nova música.\n");
+  printf("2. Mostrar lista de músicas.\n");
+  printf("3. Sair do progrma.\n");
+  printf("----------------------------------\n");
   printf("Digite sua opção:\n>> ");
 
-  scanf("%d", &escolha);
+  scanf("%d", &escolha); //scanf_s
   while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
 
   //system("Cls"); //sh: 1: Cls: not found
@@ -64,54 +67,59 @@ int menu(){
 }
 
 void InserirInicio(){
-  struct ElementoDaLista_Simples *NovoElemento; //Criando um novo elemento do tipo struct
+  int c;
+
+  struct Lista_de_Musicas *NovaMusica; //Criando um novo elemento do tipo struct
   
-  NovoElemento = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
+  NovaMusica = (struct Lista_de_Musicas *)malloc(sizeof(struct Lista_de_Musicas)); //Alocar o elemento na memória do mesmo tamanho que da struct
   
-  printf("\nInserir nome da musica:");
-  scanf("%s", NovoElemento->titulo);
+  printf("Digite o nome da música: \n>> ");
+  scanf("%s", NovaMusica->titulo);
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
   //Adicionar o limpador!!!!
   
-  printf("\nInserir nome do artista:");
-  scanf("%s", NovoElemento->artista);
+  printf("Nome do artista ou da banda: \n>> ");
+  scanf("%s", NovaMusica->artista); //scanf_s
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
   //Adicionar o limpador!!!!
   
-  printf("Inserir duracao da musica?");
-  scanf("%f", &NovoElemento->duracao);
+  printf("Tempo da faixa musical:  \n>> ");
+  scanf("%f", &NovaMusica->duracao); //scanf_s
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
   //Adicionar o limpador!!!!
 
   //Inserindo na lista:
   if (Head == NULL) //Se a lista estiver vazia
   {
-    Head = NovoElemento;
+    Head = NovaMusica;
     Head->proximo = NULL; //Aponta para nada porque nao é circular
   }
   else //Se a lista nao estiver vazia:
   {
-    NovoElemento->proximo = Head;
-    Head = NovoElemento;
+    NovaMusica->proximo = Head;
+    Head = NovaMusica;
   }
 }
 
 void Listar(){
-  struct ElementoDaLista_Simples *ElementoVarredura;
-  ElementoVarredura = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
+  struct Lista_de_Musicas *ElementoVarredura;
+  ElementoVarredura = (struct Lista_de_Musicas *)malloc(sizeof(struct Lista_de_Musicas)); //Alocar o elemento na memória do mesmo tamanho que da struct
 
   ElementoVarredura = Head;
 
   if (ElementoVarredura == NULL){
-    printf("Não há nenhuma música salva\n");
+    printf("\nNão há nenhuma música salva.\n\n");
     return;
   }
   while (ElementoVarredura != NULL){
-    printf("Título: %s ", ElementoVarredura->titulo);
-    printf("Artista/Banda: %s ", ElementoVarredura->artista);
-    printf("Duração: %f ", ElementoVarredura->duracao);
+    printf("Título: %s \n", ElementoVarredura->titulo);
+    printf("Artista/Banda: %s \n", ElementoVarredura->artista);
+    printf("Duração: %.2f \n\n", ElementoVarredura->duracao);
     
     ElementoVarredura = ElementoVarredura->proximo;
 
   }
-  printf("\n\n");
+  printf("\n");
 
   //system("pause");
   return;
