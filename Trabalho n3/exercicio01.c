@@ -11,6 +11,7 @@ void InserirInicio(int num);
 void InserirFinal(int num);
 void InserirMeio(int num, int posicao);
 void Listar();
+int Remover(int num);
 
 struct ElementoDaLista_Simples{
   int dado; //muda aqui pras musicas
@@ -19,7 +20,7 @@ struct ElementoDaLista_Simples{
 
 
 int main() {
-  int c, opcao, num, posicao;
+  int c, opcao, num, posicao, remocao;
   while (1){
     opcao= menu();
     switch(opcao){
@@ -29,12 +30,14 @@ int main() {
         while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
         InserirInicio(num);
         break;
+      
       case 2: //Inserir no fim da lsita
         printf("Digite o numero desejado: ");
         scanf("%d", &num);
         while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
         InserirFinal(num);
         break;
+      
       case 3: //Inserir no meio da lsita
         printf("Digite o numero desejado: ");
         scanf("%d", &num);
@@ -44,13 +47,29 @@ int main() {
         while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
         InserirMeio(num, posicao);
         break;
+      
       case 4: //Remover da lista
-        break; 
+        printf("Digite o numero a ser removido: ");
+        scanf("%d", &num);
+        while ((c = getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
+
+        remocao = Remover(num);
+        if (remocao == 1)
+          printf("Numero removido.\n");
+        else
+          printf("Numero nao encontrado.\n");
+        
+        break;
+      
       case 5: //Mostrar a lita
         Listar();
         break;
+      
       case 6:
         return 0;
+      
+      default:
+			  printf("Invalido\n");
 
     }
   }
@@ -163,5 +182,39 @@ void InserirMeio(int num, int position){
     ElementoVarredura->proximo = NovoElemento;
     NovoElemento->proximo = ElementoAuxiliar;
   }
+
+}
+
+int Remover(int num){
+
+  struct ElementoDaLista_Simples *ElementoVarredura;
+	ElementoVarredura = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
+	
+  struct ElementoDaLista_Simples * Auxiliar;
+	Auxiliar = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
+
+	ElementoVarredura = Head;
+  
+	while (ElementoVarredura != NULL) {
+		if (ElementoVarredura->dado == num) {
+			if (ElementoVarredura == Head) {
+				Head = ElementoVarredura->proximo;
+				free(ElementoVarredura);
+        return 1;
+			}
+			else {
+				Auxiliar->proximo = ElementoVarredura->proximo ;
+				free(ElementoVarredura);
+				return 1;
+			}
+		}
+		else {
+			Auxiliar = ElementoVarredura;
+			ElementoVarredura = ElementoVarredura->proximo;
+		}
+    
+	}
+
+  return 0;
 
 }
