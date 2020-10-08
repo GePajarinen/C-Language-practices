@@ -1,7 +1,7 @@
 /**
 Exercício 1:
 Aula prática 02
-**/
+*/
 
 #include <stdio.h>
 #include<stdlib.h>
@@ -55,9 +55,9 @@ int main() {
 
         remocao = Remover(num);
         if (remocao == 1)
-          printf("Numero removido.\n");
+          printf("Numero removido.\n\n");
         else
-          printf("Numero nao encontrado.\n");
+          printf("Numero nao encontrado.\n\n");
         
         break;
       
@@ -69,7 +69,7 @@ int main() {
         return 0;
       
       default:
-			  printf("Invalido\n");
+			  printf("Invalido\n\n");
 
     }
   }
@@ -126,7 +126,7 @@ void Listar(){
     ElementoVarredura = ElementoVarredura->proximo;
 
   }
-  printf("\n");
+  printf("\n\n");
 
   //system("pause");
   return;
