@@ -17,7 +17,7 @@ void Listar();
 
 struct ElementoDaLista_Simples{
   int dado; //muda aqui pras musicas
-  ElementoDaLista_Simples *proximo;
+  struct ElementoDaLista_Simples *proximo;
 } *Head; //Global
 
 
@@ -61,14 +61,14 @@ int menu(){
   printf("Digite sua opção:\n>> ");
 
   scanf("%d", &escolha);
-  while (((c=getchar()) != '\n' && c != EOF) {} // Limpeza de buffer
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza de buffer
 
-  system("Cls");
+  //system("Cls"); //sh: 1: Cls: not found
   return escolha;
 }
 
 void InserirInicio(int num){
-  ElementoDaLista_Simples *NovoElemento; //Criando um novo elemento do tipo struct
+  struct ElementoDaLista_Simples *NovoElemento; //Criando um novo elemento do tipo struct
   NovoElemento = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
   NovoElemento->dado = num; //O campo dado da struct NovoElemento recebe o num
 
@@ -86,7 +86,7 @@ void InserirInicio(int num){
 }
 
 void Listar(){
-  ElementoDaLista_Simples *ElementoVarredura;
+  struct ElementoDaLista_Simples *ElementoVarredura;
   ElementoVarredura = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
 
   ElementoVarredura = Head;
@@ -94,7 +94,7 @@ void Listar(){
     return;
   }
   while (ElementoVarredura != NULL){
-    printf("%d", ElementoVarredura->dado);
+    printf("%d ", ElementoVarredura->dado);
     ElementoVarredura = ElementoVarredura->proximo;
 
   }
