@@ -8,54 +8,39 @@ Faça um algoritmo em linguagem C que emule as características de um player de 
 Utilize como base o código de listas da AULA PRÁTICA 2 da disciplina. Código está disponível no Github do professor. O link está na aula prática 2;
 */
 
+
 #include <stdio.h>
 #include<stdlib.h>
 
 int menu();
-void InserirInicio(int num);
-void InserirFinal(int num);
-void InserirMeio(int num, int posicao);
+void InserirInicio();
 void Listar();
 
 struct ElementoDaLista_Simples{
-  int dado; //muda aqui pras musicas
+  char titulo[30], artista[30]; //vetor que vai armazenar o titulo da musica.
+  float duracao;
   struct ElementoDaLista_Simples *proximo;
 } *Head; //Global
 
 
 int main() {
-  int c, opcao, num, posicao;
+  int c, opcao, num, posicao, remocao;
   while (1){
     opcao= menu();
     switch(opcao){
       case 1: //Inserir no início da lsita
-        printf("Digite o numero desejado: ");
-        scanf("%d", &num);
-        while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
-        InserirInicio(num);
+        InserirInicio();
         break;
-      case 2: //Inserir no fim da lsita
-        printf("Digite o numero desejado: ");
-        scanf("%d", &num);
-        while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
-        InserirFinal(num);
-        break;
-      case 3: //Inserir no meio da lsita
-        printf("Digite o numero desejado: ");
-        scanf("%d", &num);
-        while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
-        printf("Digite a posicao: ");
-        scanf("%d", &posicao);
-        while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
-        InserirMeio(num, posicao);
-        break;
-      case 4: //Remover da lista
-        break; 
+      
       case 5: //Mostrar a lita
         Listar();
         break;
-      case 6:
+      
+      case 6: //Sair do programa
         return 0;
+      
+      default:
+			  printf("Invalido\n\n");
 
     }
   }
@@ -67,9 +52,6 @@ int menu(){
   //system("Cls"); //sh: 1: Cls: not found
 
   printf("1. Inserir no início da lista encadeada simples.\n");
-  printf("2. Inserir no fim da lista encadeada simples.\n");
-  printf("3. Inserir no meio da lista encadeada simples.\n");
-  printf("4. Remover da lista encadeada simples.\n");
   printf("5. Mostrar a lista encadeada simples.\n");
   printf("6. Sair do progrma.\n");
   printf("Digite sua opção:\n>> ");
@@ -81,10 +63,22 @@ int menu(){
   return escolha;
 }
 
-void InserirInicio(int num){
+void InserirInicio(){
   struct ElementoDaLista_Simples *NovoElemento; //Criando um novo elemento do tipo struct
+  
   NovoElemento = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
-  NovoElemento->dado = num; //O campo dado da struct NovoElemento recebe o num
+  
+  printf("\nInserir nome da musica:");
+  scanf("%s", NovoElemento->titulo);
+  //Adicionar o limpador!!!!
+  
+  printf("\nInserir nome do artista:");
+  scanf("%s", NovoElemento->artista);
+  //Adicionar o limpador!!!!
+  
+  printf("Inserir duracao da musica?");
+  scanf("%f", &NovoElemento->duracao);
+  //Adicionar o limpador!!!!
 
   //Inserindo na lista:
   if (Head == NULL) //Se a lista estiver vazia
@@ -104,69 +98,21 @@ void Listar(){
   ElementoVarredura = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
 
   ElementoVarredura = Head;
+
   if (ElementoVarredura == NULL){
+    printf("Não há nenhuma música salva\n");
     return;
   }
   while (ElementoVarredura != NULL){
-    printf("%d ", ElementoVarredura->dado);
+    printf("Título: %s ", ElementoVarredura->titulo);
+    printf("Artista/Banda: %s ", ElementoVarredura->artista);
+    printf("Duração: %f ", ElementoVarredura->duracao);
+    
     ElementoVarredura = ElementoVarredura->proximo;
 
   }
-  printf("\n");
+  printf("\n\n");
 
   //system("pause");
   return;
-}
-
-void InserirFinal(int num){
-  
-  struct ElementoDaLista_Simples *NovoElemento; //Criando um novo elemento do tipo struct
-  NovoElemento = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
-
-  struct ElementoDaLista_Simples *ElementoVarredura;
-  ElementoVarredura = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
-
-  NovoElemento->dado = num;
-  if(Head == NULL){
-    Head = NovoElemento;
-    Head->proximo = NULL;
-  }
-  else{
-    ElementoVarredura = Head;
-    
-    while(ElementoVarredura->proximo != NULL){
-      ElementoVarredura = ElementoVarredura->proximo;
-    }
-    ElementoVarredura->proximo = NovoElemento;
-    NovoElemento->proximo = NULL;
-  }
-}
-
-void InserirMeio(int num, int position){
-  int posicao = position -1; //Para a posicao do usuário conincidir com a posicao correta na lista.
-
-  struct ElementoDaLista_Simples *NovoElemento; //Criando um novo elemento do tipo struct
-  NovoElemento = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
-
-  struct ElementoDaLista_Simples *ElementoVarredura;
-  ElementoVarredura = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
-
-  struct ElementoDaLista_Simples *ElementoAuxiliar;
-  ElementoAuxiliar = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
-
-  NovoElemento->dado = num;
-  if (posicao == 0){
-    Head = NovoElemento;
-    Head->proximo = NULL;
-  }
-  else{
-    ElementoVarredura = Head;
-    for(int i=0; i<posicao-1; i++){
-      ElementoVarredura = ElementoVarredura->proximo;
-    }
-    ElementoAuxiliar = ElementoVarredura->proximo;
-    ElementoVarredura->proximo = NovoElemento;
-    NovoElemento->proximo = ElementoAuxiliar;
-  }
-
 }
