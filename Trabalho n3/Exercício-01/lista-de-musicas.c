@@ -14,6 +14,7 @@ Utilize como base o código de listas da AULA PRÁTICA 2 da disciplina. Código 
 int menu();
 void InserirInicio(int num);
 void Listar();
+void InserirFinal(int num);
 
 struct ElementoDaLista_Simples{
   int dado; //muda aqui pras musicas
@@ -32,6 +33,9 @@ int main() {
         InserirInicio(num);
         break;
       case 2: //Inserir no fim da lsita
+        printf("Digite o numero desejado: ");
+        scanf("%d", &num);
+        InserirFinal(num);
         break;
       case 3: //Inserir no meio da lsita
         break;
@@ -102,4 +106,28 @@ void Listar(){
 
   //system("pause");
   return;
+}
+
+void InserirFinal(int num){
+  
+  struct ElementoDaLista_Simples *NovoElemento; //Criando um novo elemento do tipo struct
+  NovoElemento = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
+
+  struct ElementoDaLista_Simples *ElementoVarredura;
+  ElementoVarredura = (struct ElementoDaLista_Simples *)malloc(sizeof(struct ElementoDaLista_Simples)); //Alocar o elemento na memória do mesmo tamanho que da struct
+
+  NovoElemento->dado = num;
+  if(Head == NULL){
+    Head = NovoElemento;
+    Head->proximo = NULL;
+  }
+  else{
+    ElementoVarredura = Head;
+    
+    while(ElementoVarredura->proximo != NULL){
+      ElementoVarredura = ElementoVarredura->proximo;
+    }
+    ElementoVarredura->proximo = NovoElemento;
+    NovoElemento->proximo = NULL;
+  }
 }
