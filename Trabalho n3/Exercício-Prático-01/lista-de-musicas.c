@@ -43,7 +43,7 @@ int main() {
         return 0;
       
       default: //Para opção inválida
-			  printf("\nOpção inválida. Tente novamente.\n\n");
+	printf("\nOpção inválida. Tente novamente.\n\n");
 
     }
   }
