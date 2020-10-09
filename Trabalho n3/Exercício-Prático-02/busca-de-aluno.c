@@ -10,24 +10,25 @@ Defina a estrutura de dados que você irá utilizar para fazer esta implementaç
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h> //Para usar a funcao strcpy() cause -> You can't assign to an array, only copy to it.
+#include <string.h> //Biblioteca para usar a função strcpy(), porque o vetor não por ser designado, mas somente copiado. 
 
 
-struct Aluno{
-  char nome[20], email[30];
-  int RU;
+struct Aluno{ //Criando a estrutura heterogênea de dados para o cadastro dos alunos.
+  char nome[20], email[30]; //vetores que vão armazenar o nome do aluno e outra o email.
+  int RU; //Recebe o número RU.
   struct Aluno *proximo;
-} *Head; //Global
+} *Head; //Variável de escopo Global.
 
-
+//Declarando as funções que vão ser usadas 
 void InserirAluno_Inicio(char n[20], char e[30], int r);
 void Imprimir();
-void Buscar();
+void Buscar(); 
 void Menu();
 
 int main(){
-  int c, numRU;
+  int c, numRU; //Declarando as variáveis.
 
+  //Criando o cadastro de cada aluno.
   InserirAluno_Inicio("Angela", "Angela@dm.com", 2466551);
   InserirAluno_Inicio("Jim", "Jim@dm.com", 2466552);
   InserirAluno_Inicio("Pamela", "Pamela@dm.com", 2466553);
@@ -39,67 +40,74 @@ int main(){
   InserirAluno_Inicio("Stanley", "Stanley@dm.com", 2466558);
   InserirAluno_Inicio("Michael", "Michael@dm.com", 2466559);
   
-  Menu();
+  Menu(); //Chamando a função Menu.
   
   //system("pause");
   return 0;
 }
 
-// A estrutura de dados utilizada para fazer a implementação é a Linear Simples, devido ao pequeno tamanho da lista. Não se vê necessidade de ter ponteiros para o próximo e também para o antecessor uma vez que não há muita correlação entre os dados cadastrais dos alunos. 
+// A estrutura de dados utilizada para fazer a implementação é a lista encadeada Simples não circular, devido ao pequeno tamanho da lista. Não se vê necessidade de ter ponteiros para o próximo e também para o antecessor uma vez que não há muita correlação entre os dados cadastrais dos alunos. 
 
-void Menu(){
-  int escolha, c; 
+void Menu(){ //Função Menu:
+  int escolha, c; //Declarando as variáveis.
 
   printf("------- Escolha sua opção: ------- \n");
   printf("1. Imprimir a lista de alunos cadastrados.\n");
   printf("2. Buscar aluno no cadastro.\n >> ");
-  scanf("%d", &escolha);
-  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
+  scanf("%d", &escolha); //scanf_s!!! Entrada da informação fornecida pelo usuário.
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer.
 
-  switch(escolha){
-    case 1:
+  switch(escolha){ 
+    case 1: //Imprime a lista dos alunos já cadastrados
       Imprimir();
     break;
-    case 2:
+    case 2: //Opção de buscar pela informação do aluno através do RU.
       Buscar();
     break;
-    default:
+    default: //Para opção inválida.
       printf("Escolha Inválida.\nTente novamente.\n\n");
       Menu();
   } 
+  
+  //system("pause");
+
 }
 
-void InserirAluno_Inicio(char n[20], char e[30], int r){
-  struct Aluno *NovoAluno; //Criando um novo elemento do tipo struct 
-  
-  NovoAluno = (struct Aluno *)malloc(sizeof(struct Aluno)); //Alocar o elemento na memória do mesmo tamanho que da struct
+void InserirAluno_Inicio(char n[20], char e[30], int r){ //Função que gera a lista dos alunos já cadastrados.
 
-  strcpy(NovoAluno->nome, n); //can't assign to an array, only copy to it.
-  strcpy(NovoAluno->email, e); //can't assign to an array, only copy to it.
-  NovoAluno->RU = r; //O campo dado da struct NovoAluno recebe o num
+  struct Aluno *NovoAluno; //Criando um novo elemento do tipo struct. 
+  
+  NovoAluno = (struct Aluno *)malloc(sizeof(struct Aluno)); //Alocar o elemento na memória do mesmo tamanho que da struct original.
+
+  strcpy(NovoAluno->nome, n); //Usando o strcpy() porque o vetor não por ser designado, mas somente copiado. 
+  strcpy(NovoAluno->email, e); //Usando o strcpy() porque o vetor não por ser designado, mas somente copiado. 
+  NovoAluno->RU = r; //O campo dado da struct NovoAluno recebe o RU do aluno.
 
   //Inserindo na lista:
-  if (Head == NULL) //Se a lista estiver vazia
+  if (Head == NULL) //Se a lista estiver vazia.
   {
-    Head = NovoAluno;
-    Head->proximo = NULL; //Aponta para nada porque nao é circular
+    Head = NovoAluno; //O Head recebe o primeiro cadastro.
+    Head->proximo = NULL; //Aponta para nada porque não é circular.
   }
-  else //Se a lista nao estiver vazia:
+  else //Se a lista não estiver vazia:
   {
-    NovoAluno->proximo = Head;
-    Head = NovoAluno;
+    NovoAluno->proximo = Head;  //O Head passa a ser o próximo.
+    Head = NovoAluno; //O novo cadastro passa a ser o Head.
   }
+
+  //system("pause");
 }
 
-void Imprimir(){
+void Imprimir(){ //Função que imprime a lista dos alunos.
+  
   struct Aluno *ElementoVarredura;
-  ElementoVarredura = (struct Aluno *)malloc(sizeof(struct Aluno)); //Alocar o elemento na memória do mesmo tamanho que da struct
+  ElementoVarredura = (struct Aluno *)malloc(sizeof(struct Aluno)); //Alocar o elemento na memória do mesmo tamanho que da struct original.
 
   ElementoVarredura = Head;
-  if (ElementoVarredura == NULL){
+  if (ElementoVarredura == NULL){ //Quando chegar ao final da lista.
     return;
   }
-  while (ElementoVarredura != NULL){
+  while (ElementoVarredura != NULL){ //Enquanto não chega ao final da lista, imprime as informações.
     printf("\nNome: %s", ElementoVarredura->nome);
     printf("\nE-mail: %s", ElementoVarredura->email);
     printf("\nRu: %d\n", ElementoVarredura->RU);
@@ -112,33 +120,33 @@ void Imprimir(){
 }
 
 
-void Buscar (){
+void Buscar (){//Função que busca as informações do aluno pelo RU.
 
-  int c, numRU;
+  int c, numRU; //Declarando as variáveis.
 
   printf("\n****** Procurar aluno ******\n");
   printf("Digite o RU do aluno que deseja buscar:\n>> ");
-  scanf("%d", &numRU);
-  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
+  scanf("%d", &numRU); //scanf_s!!!! Recebendo a informação do usuário.
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer.
 
   struct Aluno *ElementoVarredura;
-  ElementoVarredura = (struct Aluno *)malloc(sizeof(struct Aluno)); //Alocar o elemento na memória do mesmo tamanho que da struct
+  ElementoVarredura = (struct Aluno *)malloc(sizeof(struct Aluno)); //Alocar o elemento na memória do mesmo tamanho que da struct original.
 
   ElementoVarredura = Head;
   
-  while(ElementoVarredura != NULL){
-    if (ElementoVarredura->RU == numRU) {
+  while(ElementoVarredura != NULL){ //Enquando não chega ao final da lista.
+    if (ElementoVarredura->RU == numRU) {//Se o RU cadastrado for igual ao RU que o usuário digitou para a busca. 
       printf("\nAluno encontrado:\n");
 			printf("\nNome: %s", ElementoVarredura->nome);
       printf("\nE-mail: %s", ElementoVarredura->email);
       return;
 		}
-		else {
+		else { //Se o RU cadastrado não for igual ao RU que o usuário digitou para a busca, segue em frente.
 			ElementoVarredura = ElementoVarredura->proximo;
 		} 
   }
 
-  printf("\nAluno não encontrado.\n");
+  printf("\nAluno não encontrado.\n"); //Para o caso do RU que o usuário busca não for encontrado na lista dos cadastrados.
 
   //system("pause");
   return;

@@ -12,32 +12,34 @@ Utilize como base o código de listas da AULA PRÁTICA 2 da disciplina. Código 
 #include <stdio.h>
 #include<stdlib.h>
 
-int menu();
-void InserirInicio();
-void Listar();
+int menu(); //Anunciando a função Menu.
+void InserirInicio(); //Anunciando a função que vai criar a lista.
+void Imprimir(); //Anunciando a função que vai imprimir a lista na tela.
+
 
 struct Lista_de_Musicas{
-  char titulo[30], artista[30]; //vetor que vai armazenar o titulo da musica.
-  float duracao;
+  char titulo[30], artista[30]; //vetores que vão armazenar o título da musica e outra o artista ou banda.
+  float duracao; //duração da faixa musical.
   struct Lista_de_Musicas *proximo;
-} *Head; //Global
+} *Head; //elemento de escopo Global.
 
 
 int main() {
-  int c, opcao;
+  int c, opcao; //Criação das variáveis.
+
   while (1){
-    opcao= menu();
+    opcao= menu(); //Chamndo a função do Menu.
 
     switch(opcao){
-      case 1: //Inserir no início da lista
-        InserirInicio();
+      case 1: //Inserir música no início da lista.
+        InserirInicio();//Chamdno a função de inserir.
         break;
       
-      case 2: //Mostrar a lista
-        Listar();
+      case 2: //Imprimir a lista de músicas
+        Imprimir();
         break;
       
-      case 3: //Sair do programa
+      case 3: //Sair do programa.
         return 0;
       
       default: //Para opção inválida
@@ -45,73 +47,75 @@ int main() {
 
     }
   }
+
   return 0;
+  //system("pause");
 }
 
-int menu(){
+int menu(){ //Função MENU:
   int escolha, c;
-  //system("Cls"); //sh: 1: Cls: not found
 
-  printf("----------------------------------\n");
+  printf("-------------- MENU --------------\n");
   printf("1. Inserir nova música.\n");
   printf("2. Mostrar lista de músicas.\n");
   printf("3. Sair do progrma.\n");
   printf("----------------------------------\n");
   printf("Digite sua opção:\n>> ");
 
-  scanf("%d", &escolha); //scanf_s
-  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
+  scanf("%d", &escolha); //scanf_s Entrada da opção do usuário.
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer.
 
-  //system("Cls"); //sh: 1: Cls: not found
   return escolha;
 }
 
-void InserirInicio(){
-  int c;
+void InserirInicio(){ //Função que insere a música na lista.
+  int c; //Variável para a limpeza do buffer.
 
-  struct Lista_de_Musicas *NovaMusica; //Criando um novo elemento do tipo struct
+  struct Lista_de_Musicas *NovaMusica; //Criando um novo elemento do tipo struct.
   
-  NovaMusica = (struct Lista_de_Musicas *)malloc(sizeof(struct Lista_de_Musicas)); //Alocar o elemento na memória do mesmo tamanho que da struct
+  NovaMusica = (struct Lista_de_Musicas *)malloc(sizeof(struct Lista_de_Musicas)); //Alocar o elemento na memória do mesmo tamanho que da struct original.
   
   printf("Digite o nome da música: \n>> ");
-  scanf("%s", NovaMusica->titulo);
-  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
-  //Adicionar o limpador!!!!
+  scanf("%s", NovaMusica->titulo); //scanf_s!!!! Recebendo o dado do usuário.
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer.
   
   printf("Nome do artista ou da banda: \n>> ");
-  scanf("%s", NovaMusica->artista); //scanf_s
-  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
-  //Adicionar o limpador!!!!
+  scanf("%s", NovaMusica->artista); //scanf_s!!! //Recebendo a informação do usuário.
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer.
   
   printf("Tempo da faixa musical:  \n>> ");
-  scanf("%f", &NovaMusica->duracao); //scanf_s
-  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer
-  //Adicionar o limpador!!!!
+  scanf("%f", &NovaMusica->duracao); //scanf_s Recebendo a informação do usuário.
+  while ((c=getchar()) != '\n' && c != EOF) {} // Limpeza do buffer.
 
   //Inserindo na lista:
-  if (Head == NULL) //Se a lista estiver vazia
+  if (Head == NULL) //Se a lista estiver vazia, a música fica no início.
   {
     Head = NovaMusica;
-    Head->proximo = NULL; //Aponta para nada porque nao é circular
+    Head->proximo = NULL; //Aponta para nada porque não é circular.
   }
-  else //Se a lista nao estiver vazia:
+  else //Se a lista não estiver vazia, o Head passa como próximo e a nova música passa a ser o Head.
   {
     NovaMusica->proximo = Head;
     Head = NovaMusica;
   }
+  
+  //system("pause");
 }
 
-void Listar(){
+void Imprimir(){ //Função de imprimir a lista de músicas.
+
   struct Lista_de_Musicas *ElementoVarredura;
-  ElementoVarredura = (struct Lista_de_Musicas *)malloc(sizeof(struct Lista_de_Musicas)); //Alocar o elemento na memória do mesmo tamanho que da struct
+  ElementoVarredura = (struct Lista_de_Musicas *)malloc(sizeof(struct Lista_de_Musicas)); //Alocar o elemento na memória do mesmo tamanho que da struct original.
 
-  ElementoVarredura = Head;
+  ElementoVarredura = Head; 
 
-  if (ElementoVarredura == NULL){
-    printf("\nNão há nenhuma música salva.\n\n");
+  printf("\n---------- Lista de Músicas ----------\n\n");
+
+  if (ElementoVarredura == NULL){ //Se a lsita de música estiver vazia:
+    printf("Você ainda não inseriu nenhuma música :(\n\n");
     return;
   }
-  while (ElementoVarredura != NULL){
+  while (ElementoVarredura != NULL){ //Se a lista de música não estiver vazia:
     printf("Título: %s \n", ElementoVarredura->titulo);
     printf("Artista/Banda: %s \n", ElementoVarredura->artista);
     printf("Duração: %.2f \n\n", ElementoVarredura->duracao);
@@ -124,3 +128,7 @@ void Listar(){
   //system("pause");
   return;
 }
+
+/*
+Queria ter um file pra abrir e registrar e ja ter alguma coisa registrada pra acessar.
+*/
